@@ -1,0 +1,76 @@
+{
+  "name": "web-pc-template",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vue-tsc --noEmit && nuxt build --mode production",
+    "dev": "nuxt dev --mode development",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "lint": "git add . && lint-staged && git reset HEAD -- .",
+    "once": "git-cz",
+    "commit": "git add . && git-cz"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.9.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-define-config": "^1.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "nuxt": "npm:nuxt3@latest",
+    "postcss": "^8.4.14",
+    "postcss-html": "^1.4.1",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-order": "^5.0.0",
+    "typescript": "^4.7.4",
+    "vue-eslint-parser": "^9.0.3",
+    "vue-tsc": "^0.38.2"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.1.9",
+    "amfe-flexible": "^2.2.1",
+    "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
+    "node-sass": "^7.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.14",
+    "postcss-pxtorem": "^6.0.0",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}
